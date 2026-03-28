@@ -1,14 +1,22 @@
-def addition():
-    print("Kalkylator för att addera två tal")
-    try:
-        tal1 = int(input("Skriv det första talet: "))
-        tal2 = int(input("Skriv det andra talet: "))
+def operator():
+    print("Kalkylator för att addera två tal\n")
+    tal1 = int(input("Skriv det första talet: "))
+    vald_operator = input("skriv operaton")
+    tal2 = int(input("Skriv det andra talet: "))
 
+    if vald_operator == "-":
+        resultat = tal1 - tal2
+    elif vald_operator == "+":
         resultat = tal1 + tal2 
+    elif vald_operator == "*":
+        resultat = tal1 * tal2
+    elif vald_operator == "/":
+        resultat = tal1 / tal2
+    else:
+        print("Ogiltig operator")
+        return
 
-        print(tal1, "+", tal2, "=", resultat)
+    print(tal1, vald_operator, tal2, "=", resultat)
 
-    except ValueError:
-        print("skriv en siffra inte nåt annat")
-    except Exception as e:
-        print("fel:", e)
+
+if __name__ == "__main__":    operator()
